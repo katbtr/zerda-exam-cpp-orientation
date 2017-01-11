@@ -3,18 +3,19 @@
 
 using namespace std;
 
-FileHandling::FileHandling() {
-
+FileHandling::FileHandling(std::string filename1, std::string filename2) {
+    content = "";
+    this->input_filename = filename1;
+    this->output_filename = filename2;
 }
 
 FileHandling::~FileHandling() {
 
 }
 
-string FileHandling::read_file(string input_filename) {
-    std::ifstream source_file(input_filename.c_str());
-    std::string buffer;
-    std::string content = "";
+string FileHandling::read_file() {
+    ifstream source_file(input_filename);
+    string buffer;
     while (getline(source_file, buffer)) {
         content += buffer + "\n";
     }
@@ -22,7 +23,7 @@ string FileHandling::read_file(string input_filename) {
     return content;
 }
 
-void FileHandling::write_file(string output_filename, string result) {
+void FileHandling::write_file(string result) {
     my_file.open(output_filename.c_str());
     my_file << result << endl;
     my_file.close();

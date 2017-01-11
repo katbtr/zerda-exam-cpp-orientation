@@ -8,17 +8,17 @@
 
 TEST_CASE( "File reading" ) {
 
-    FileHandling filehandling;
+    FileHandling filehandling("Input.txt", "Output.txt");
 
-    REQUIRE( filehandling.read_file("Input.txt") == "This text has to be read in\n"  );
-    REQUIRE_FALSE( filehandling.read_file("Input.txt") == "" );
+    REQUIRE( filehandling.read_file() == "This text has to be read in\n"  );
+    REQUIRE_FALSE( filehandling.read_file() == "" );
 }
 
 TEST_CASE( "File writing" ) {
 
-    FileHandling filehandling;
-    filehandling.write_file("Output.txt", "This is the text I write into the file");
+    FileHandling filehandling("Input.txt", "Output.txt");
+    filehandling.write_file("This is the text I write into the file");
 
-    REQUIRE( filehandling.read_file("Output.txt") == "This is the text I write into the file\n"  );
-    REQUIRE_FALSE( filehandling.read_file("Output.txt") == "" );
+    REQUIRE( filehandling.read_file() == "This is the text I write into the file\n"  );
+    REQUIRE_FALSE( filehandling.read_file() == "" );
 }

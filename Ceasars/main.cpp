@@ -1,13 +1,7 @@
-#include <iostream>
-
-using namespace std;
+#include "UserInterface.h"
 
 int main(int argc, char** argv) {
-
-    if (argc == 1) {
-        cout << "No filename is provided" << endl;
-    } else if (string(argv[2]) != "-s") {
-        cout << "No shift is provided" << endl;
-    }
-
+    UserInterface caesars(argc, argv);
+    caesars.run();
+    return 0;
 }

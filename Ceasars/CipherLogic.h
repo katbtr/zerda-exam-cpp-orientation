@@ -9,12 +9,25 @@ class CipherLogic {
 private:
     std::string input_text;
     std::string result;
-    int shift;
+    std::string shift;
+    int shift_in_int;
 public:
-    CipherLogic();
+    CipherLogic(std::string, std::string);
     ~CipherLogic();
-    std::string decrypt_text(std::string, int);
+    void decrypt_text();
+    std::string get_result_text();
 
 };
 
 #endif //CAESARS_CIPHERLOGIC_H
+
+class Decryptor {
+private:
+    std::string text;
+    int value;
+public:
+    Decryptor(std::string, std::string);
+    ~Decryptor();
+    void decrypt();
+    std::string get_decrypt();
+};

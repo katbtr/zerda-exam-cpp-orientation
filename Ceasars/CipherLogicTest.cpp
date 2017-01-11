@@ -8,33 +8,27 @@
 
 TEST_CASE( "Cipher Logic is working" ) {
 
-    CipherLogic cipherlogic;
+    CipherLogic cipherlogic("Itmd", "1");
+    cipherlogic.decrypt_text();
 
-    std::string text = "Itmd";
-    int shift = 1;
-
-    REQUIRE( cipherlogic.decrypt_text(text, shift) == "June"  );
-    REQUIRE_FALSE( cipherlogic.decrypt_text(text, shift) == "" );
+    REQUIRE( cipherlogic.get_result_text() == "June"  );
+    REQUIRE_FALSE( cipherlogic.get_result_text() == "" );
 }
 
 TEST_CASE( "Cipher Logic with negative shift" ) {
 
-    CipherLogic cipherlogic;
+    CipherLogic cipherlogic("Kvof", "-1");
+    cipherlogic.decrypt_text();
 
-    std::string text = "Kvof";
-    int shift = -1;
-
-    REQUIRE( cipherlogic.decrypt_text(text, shift) == "June"  );
-    REQUIRE_FALSE( cipherlogic.decrypt_text(text, shift) == "" );
+    REQUIRE( cipherlogic.get_result_text() == "June"  );
+    REQUIRE_FALSE( cipherlogic.get_result_text() == "" );
 }
 
 TEST_CASE( "Cipher Logic with numbers" ) {
 
-    CipherLogic cipherlogic;
+    CipherLogic cipherlogic("Itmd 28", "1");
+    cipherlogic.decrypt_text();
 
-    std::string text = "Itmd 28";
-    int shift = 1;
-
-    REQUIRE( cipherlogic.decrypt_text(text, shift) == "June 28"  );
-    REQUIRE_FALSE( cipherlogic.decrypt_text(text, shift) == "JuneUMS" );
+    REQUIRE( cipherlogic.get_result_text() == "June 28"  );
+    REQUIRE_FALSE( cipherlogic.get_result_text() == "JuneUMS" );
 }
