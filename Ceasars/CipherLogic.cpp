@@ -12,10 +12,6 @@ CipherLogic::CipherLogic(string text, string shift) {
     result = "";
 }
 
-Decryptor::Decryptor(std::string input_text, std::string number) {
-
-}
-
 CipherLogic::~CipherLogic() {
 
 }
