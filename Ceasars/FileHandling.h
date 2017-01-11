@@ -20,15 +20,3 @@ public:
 };
 
 #endif //CAESARS_FILEHANDLING_H
-
-class FileHandler {
-private:
-    std::string source_filename;
-    std::string output_filename;
-    std::string content;
-public:
-    FileHandler(std::string, std::string);
-    ~FileHandler();
-    std::string read_from_file();
-    void write_to_file(std::string);
-};

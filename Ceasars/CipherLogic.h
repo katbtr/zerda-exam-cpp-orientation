@@ -20,14 +20,3 @@ public:
 };
 
 #endif //CAESARS_CIPHERLOGIC_H
-
-class Decryptor {
-private:
-    std::string text;
-    int value;
-public:
-    Decryptor(std::string, std::string);
-    ~Decryptor();
-    void decrypt();
-    std::string get_decrypt();
-};

@@ -9,7 +9,6 @@ using namespace std;
 CipherLogic::CipherLogic(string text, string shift) {
     this->input_text = text;
     this->shift_in_int = atoi(shift.c_str());
-//    this->value = value % 26;
     result = "";
 }
 
